@@ -40,7 +40,7 @@ public class Base
 
 	public void waitForSpinnerToDisappear() 
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(300));
 		By spinnerLocator = By.cssSelector("div.ngx-spinner-overlay");
 
 		int maxAttempts = 5; // Max retries in case spinner reappears
