@@ -47,6 +47,7 @@ public class CreateCRCCPage extends Base
     
     public void enterSchoolNameDD()
     {
+	waitForSpinnerToDisappear();
     	click(schoolNameDropdown);
     }
     
