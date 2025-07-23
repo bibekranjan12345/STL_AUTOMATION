@@ -48,6 +48,8 @@ public class CreateCRCCPage extends Base
     public void enterSchoolNameDD()
     {
 	waitForSpinnerToDisappear();
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.elementToBeClickable(schoolNameDropdown));    
     	click(schoolNameDropdown);
     }
     
