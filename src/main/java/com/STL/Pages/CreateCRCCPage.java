@@ -15,7 +15,7 @@ public class CreateCRCCPage extends Base
 		super(driver);
 	}
 	
-    @FindBy(xpath = "//ng-select[@placeholder='Search and select schools...']")
+    @FindBy(xpath = "//span[@class='ng-arrow-wrapper']")
     private WebElement schoolNameDropdown;
 
     @FindBy(xpath = "//span[text()='KHADALPOKHARI PROJECT U. P.S.-21090527201']")
