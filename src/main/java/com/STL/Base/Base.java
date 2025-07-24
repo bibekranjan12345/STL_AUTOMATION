@@ -27,6 +27,7 @@ public class Base
 	}
 
 	public void click(WebElement element) {
+		waitForSpinnerToDisappear();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
