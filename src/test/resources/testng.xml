@@ -3,10 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.STL.Base.SuiteSetup" />
-      <class name="com.STL_TestCases.LoginTest"/>
-      <class name="com.STL_TestCases.NavigateToCRCCListTest"/>
       <class name="com.STL_TestCases.CreateCRCCTest"/>
+      <class name="com.STL_TestCases.NavigateToCRCCListTest"/>
+      <class name="com.STL_TestCases.LoginTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

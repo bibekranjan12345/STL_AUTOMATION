@@ -17,7 +17,7 @@ public class CreateCRCCFeature
 		
 	}
 	
-	public void createCRCC()
+	public void createCRCC() throws InterruptedException
 	{
 		crcclistpage.enterCreateButton();
 		createcrccpage.enterSchoolNameDD();

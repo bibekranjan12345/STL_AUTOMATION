@@ -45,8 +45,9 @@ public class CreateCRCCPage extends Base
     @FindBy(xpath = "//button[.='Submit ']")
     private WebElement submitButton;
     
-    public void enterSchoolNameDD()
+    public void enterSchoolNameDD() throws InterruptedException
     {
+    	Thread.sleep(5000);
     	click(schoolNameDropdown);
     }
     

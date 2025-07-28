@@ -10,7 +10,7 @@ import com.STL.Feature.NavigateToCRCCListFeature;
 public class CreateCRCCTest extends BaseTest
 {
 	@Test
-	public void createCrcc()
+	public void createCrcc() throws InterruptedException
 	{
 		CreateCRCCFeature createcrccfeature=new CreateCRCCFeature(driver);
 		NavigateToCRCCListFeature navigatetocrccfeature=new NavigateToCRCCListFeature(driver);

@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,8 +21,7 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
@@ -51,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\narah\OneDrive\Desktop\BIBEK_NEW\STLProjects_NEW\src\test\resources\testng.xml</span>
+                    <span>C:\Users\Bibek STL\Desktop\BIBEK_NEW\STLProjects_NEW\src\test\resources\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +103,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.STL_TestCases.CreateCRCCTest" class="method navigator-link" hash-for-method="createCrcc">createCrcc</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.STL_TestCases.LoginTest" class="method navigator-link" hash-for-method="verifyLogin">verifyLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -118,12 +117,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.STL_TestCases.NavigateToCRCCListTest" class="method navigator-link" hash-for-method="navigateToCRCCListPage">navigateToCRCCListPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.STL_TestCases.CreateCRCCTest" class="method navigator-link" hash-for-method="createCrcc">createCrcc</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.STL_TestCases.LoginTest" class="method navigator-link" hash-for-method="verifyLogin">verifyLogin</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.STL_TestCases.NavigateToCRCCListTest" class="method navigator-link" hash-for-method="navigateToCRCCListPage">navigateToCRCCListPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -141,48 +140,6 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.STL_TestCases.CreateCRCCTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="createCrcc">
-                  </a> <!-- createCrcc -->
-                  <span class="method-name">createCrcc</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;ng-select-container&quot;&gt;...&lt;/div&gt; is not clickable at point (257, 292). Other element would receive the click: &lt;div _ngcontent-ng-c2720958613=&quot;&quot; class=&quot;ngx-spinner-overlay ng-tns-c2720958613-0 ng-trigger ng-trigger-fadeIn ng-star-inserted ng-animating&quot; style=&quot;background-color: rgba(51, 51, 51, 0.8); z-index: 99999; position: fixed;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=138.0.7204.97)
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4e38ce0cea97c90f39d6292f60d4627e, clickElement {id=f.0248E1609839721F835E63041AEF3985.d.5E1DAA6A859B51B1A82DDABEFD422CCC.e.154}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\narah\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62412}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62412/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (4e38ce0cea97c90f39d6292f60d4627e)] -&gt; xpath: //span[@class=&apos;ng-arrow-wrapper&apos;]/..]
-Session ID: 4e38ce0cea97c90f39d6292f60d4627e
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-	at com.STL.Base.Base.click(Base.java:32)
-	at com.STL.Pages.CreateCRCCPage.enterSchoolNameDD(CreateCRCCPage.java:50)
-	at com.STL.Feature.CreateCRCCFeature.createCRCC(CreateCRCCFeature.java:23)
-	at com.STL_TestCases.CreateCRCCTest.createCrcc(CreateCRCCTest.java:19)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 30 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">com.STL_TestCases.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -191,10 +148,35 @@ Session ID: 4e38ce0cea97c90f39d6292f60d4627e
                   <a name="verifyLogin">
                   </a> <!-- verifyLogin -->
                   <span class="method-name">verifyLogin</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[text()=&apos; Welcome BEO &apos;])[2]&quot;}
+  (Session info: chrome=138.0.7204.169)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [37f6cde47951e142eae8154ab4ffb3a6, findElement {value=(//div[text()=&apos; Welcome BEO &apos;])[2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\BIBEKS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56969}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56969/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 37f6cde47951e142eae8154ab4ffb3a6
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.STL.Constants.Constants.loginPageValidation(Constants.java:14)
+	at com.STL_TestCases.LoginTest.verifyLogin(LoginTest.java:15)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -210,10 +192,25 @@ Session ID: 4e38ce0cea97c90f39d6292f60d4627e
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.STL_TestCases.CreateCRCCTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createCrcc">
+                  </a> <!-- createCrcc -->
+                  <span class="method-name">createCrcc</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\narah\OneDrive\Desktop\BIBEK_NEW\STLProjects_NEW\src\test\resources\testng.xml</span>
+            <span class="header-content">C:\Users\Bibek STL\Desktop\BIBEK_NEW\STLProjects_NEW\src\test\resources\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -222,10 +219,9 @@ Session ID: 4e38ce0cea97c90f39d6292f60d4627e
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.STL.Base.SuiteSetup&quot;/&gt;
-      &lt;class name=&quot;com.STL_TestCases.LoginTest&quot;/&gt;
-      &lt;class name=&quot;com.STL_TestCases.NavigateToCRCCListTest&quot;/&gt;
       &lt;class name=&quot;com.STL_TestCases.CreateCRCCTest&quot;/&gt;
+      &lt;class name=&quot;com.STL_TestCases.NavigateToCRCCListTest&quot;/&gt;
+      &lt;class name=&quot;com.STL_TestCases.LoginTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -239,7 +235,7 @@ Session ID: 4e38ce0cea97c90f39d6292f60d4627e
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (4 classes)</span>
+                <span class="test-name">Test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -269,20 +265,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'createCrcc')
 data.setCell(0, 2, 'com.STL_TestCases.CreateCRCCTest')
-data.setCell(0, 3, 66526);
+data.setCell(0, 3, 83605);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'navigateToCRCCListPage')
 data.setCell(1, 2, 'com.STL_TestCases.NavigateToCRCCListTest')
-data.setCell(1, 3, 4018);
+data.setCell(1, 3, 38674);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'verifyLogin')
 data.setCell(2, 2, 'com.STL_TestCases.LoginTest')
-data.setCell(2, 3, 929);
+data.setCell(2, 3, 30079);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -297,25 +293,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.STL_TestCases.LoginTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">initializeExtent</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.STL_TestCases.CreateCRCCTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">initializeExtent</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
               <span class="ignored-class-name">com.STL_TestCases.NavigateToCRCCListTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initializeExtent</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.STL_TestCases.LoginTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">initializeExtent</span>
                 <br/>
@@ -329,57 +318,54 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.STL.Base.SuiteSetup</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.STL_TestCases.CreateCRCCTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">initializeExtent</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.STL_TestCases.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setup(public void com.STL_TestCases.LoginTest.verifyLogin())</span>
-                <span class="method-start">354 ms</span>
+                <span class="method-name">setup(public void com.STL_TestCases.CreateCRCCTest.createCrcc() throws java.lang.InterruptedException)</span>
+                <span class="method-start">230 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyLogin</span>
-                <span class="method-start">7564 ms</span>
+                <span class="method-name">createCrcc</span>
+                <span class="method-start">8513 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin()[pri:0, instance:com.STL_T...)</span>
-                <span class="method-start">8497 ms</span>
+                <span class="method-name">teardown([TestResult name=createCrcc status=SUCCESS method=CreateCRCCTest.createCrcc()[pri:0, instance:com.ST...)</span>
+                <span class="method-start">92129 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.STL_TestCases.NavigateToCRCCListTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void com.STL_TestCases.NavigateToCRCCListTest.navigateToCRCCListPage())</span>
-                <span class="method-start">12523 ms</span>
+                <span class="method-start">95389 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">navigateToCRCCListPage</span>
-                <span class="method-start">18340 ms</span>
+                <span class="method-start">106050 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=navigateToCRCCListPage status=SUCCESS method=NavigateToCRCCListTest.navigateToCRCCL...)</span>
-                <span class="method-start">22360 ms</span>
+                <span class="method-start">144728 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.STL_TestCases.CreateCRCCTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.STL_TestCases.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setup(public void com.STL_TestCases.CreateCRCCTest.createCrcc())</span>
-                <span class="method-start">25820 ms</span>
+                <span class="method-name">setup(public void com.STL_TestCases.LoginTest.verifyLogin())</span>
+                <span class="method-start">147238 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">createCrcc</span>
-                <span class="method-start">29826 ms</span>
+                <span class="method-name">verifyLogin</span>
+                <span class="method-start">155809 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=createCrcc status=FAILURE method=CreateCRCCTest.createCrcc()[pri:0, instance:com.ST...)</span>
-                <span class="method-start">96371 ms</span>
+                <span class="method-name">teardown([TestResult name=verifyLogin status=FAILURE method=LoginTest.verifyLogin()[pri:0, instance:com.STL_T...)</span>
+                <span class="method-start">185900 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
