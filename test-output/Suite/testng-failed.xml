@@ -3,14 +3,22 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.STL_TestCases.LoginTest">
+      <class name="com.STL_TestCases.NavigateToCRCCListTest">
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="verifyLogin"/>
+          <include name="navigateToCRCCListPage"/>
           <include name="initializeExtent"/>
         </methods>
-      </class> <!-- com.STL_TestCases.LoginTest -->
+      </class> <!-- com.STL_TestCases.NavigateToCRCCListTest -->
+      <class name="com.STL_TestCases.CreateCRCCTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="createCrcc"/>
+          <include name="initializeExtent"/>
+        </methods>
+      </class> <!-- com.STL_TestCases.CreateCRCCTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
