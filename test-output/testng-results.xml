@@ -1,45 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-29T11:43:45 IST" name="Suite" finished-at="2025-07-29T11:45:15 IST" duration-ms="89908">
+  <suite started-at="2025-07-31T15:03:13 IST" name="Smoke Suite" finished-at="2025-07-31T15:03:19 IST" duration-ms="5816">
     <groups>
     </groups>
-    <test started-at="2025-07-29T11:43:45 IST" name="Test" finished-at="2025-07-29T11:45:15 IST" duration-ms="89908">
-      <class name="com.STL_TestCases.CreateCRCCTest">
-        <test-method is-config="true" signature="initializeExtent()[pri:0, instance:com.STL_TestCases.CreateCRCCTest@7817fd62]" started-at="2025-07-29T11:43:45 IST" name="initializeExtent" finished-at="2025-07-29T11:43:45 IST" duration-ms="167" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeExtent -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.STL_TestCases.CreateCRCCTest@7817fd62]" started-at="2025-07-29T11:43:45 IST" name="setup" finished-at="2025-07-29T11:43:48 IST" duration-ms="3206" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.STL_TestCases.CreateCRCCTest.createCrcc() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="createCrcc()[pri:0, instance:com.STL_TestCases.CreateCRCCTest@7817fd62]" started-at="2025-07-29T11:43:48 IST" name="createCrcc" finished-at="2025-07-29T11:44:58 IST" duration-ms="69801" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createCrcc -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.STL_TestCases.CreateCRCCTest@7817fd62]" started-at="2025-07-29T11:44:58 IST" name="teardown" finished-at="2025-07-29T11:45:01 IST" duration-ms="2683" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=createCrcc status=SUCCESS method=CreateCRCCTest.createCrcc()[pri:0, instance:com.STL_TestCases.CreateCRCCTest@7817fd62] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.STL_TestCases.CreateCRCCTest -->
+    <test started-at="2025-07-31T15:03:13 IST" name="Smoke Test" finished-at="2025-07-31T15:03:19 IST" duration-ms="5816">
       <class name="com.STL_TestCases.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.STL_TestCases.LoginTest@544fa968]" started-at="2025-07-29T11:45:08 IST" name="setup" finished-at="2025-07-29T11:45:11 IST" duration-ms="2912" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.STL_TestCases.LoginTest@7e6f74c]" started-at="2025-07-31T15:03:13 IST" name="setup" finished-at="2025-07-31T15:03:17 IST" duration-ms="4582" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLogin()[pri:0, instance:com.STL_TestCases.LoginTest@544fa968]" started-at="2025-07-29T11:45:11 IST" name="verifyLogin" finished-at="2025-07-29T11:45:13 IST" duration-ms="1768" status="PASS">
+        <test-method signature="verifyLogin()[pri:0, instance:com.STL_TestCases.LoginTest@7e6f74c]" started-at="2025-07-31T15:03:17 IST" name="verifyLogin" finished-at="2025-07-31T15:03:18 IST" duration-ms="929" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.STL_TestCases.LoginTest@544fa968]" started-at="2025-07-29T11:45:13 IST" name="teardown" finished-at="2025-07-29T11:45:15 IST" duration-ms="2224" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.STL_TestCases.LoginTest@7e6f74c]" started-at="2025-07-31T15:03:18 IST" name="teardown" finished-at="2025-07-31T15:03:19 IST" duration-ms="257" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin()[pri:0, instance:com.STL_TestCases.LoginTest@544fa968] output={null}]]]>
+                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin()[pri:0, instance:com.STL_TestCases.LoginTest@7e6f74c] output={null}]]]>
               </value>
             </param>
           </params>
@@ -66,34 +34,6 @@
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.STL_TestCases.LoginTest -->
-      <class name="com.STL_TestCases.NavigateToCRCCListTest">
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.STL_TestCases.NavigateToCRCCListTest@3bd82cf5]" started-at="2025-07-29T11:45:01 IST" name="setup" finished-at="2025-07-29T11:45:03 IST" duration-ms="2839" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.STL_TestCases.NavigateToCRCCListTest.navigateToCRCCListPage()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="navigateToCRCCListPage()[pri:0, instance:com.STL_TestCases.NavigateToCRCCListTest@3bd82cf5]" started-at="2025-07-29T11:45:03 IST" name="navigateToCRCCListPage" finished-at="2025-07-29T11:45:06 IST" duration-ms="2212" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToCRCCListPage -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.STL_TestCases.NavigateToCRCCListTest@3bd82cf5]" started-at="2025-07-29T11:45:06 IST" name="teardown" finished-at="2025-07-29T11:45:08 IST" duration-ms="2223" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=navigateToCRCCListPage status=SUCCESS method=NavigateToCRCCListTest.navigateToCRCCListPage()[pri:0, instance:com.STL_TestCases.NavigateToCRCCListTest@3bd82cf5] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.STL_TestCases.NavigateToCRCCListTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Smoke Test -->
+  </suite> <!-- Smoke Suite -->
 </testng-results>

@@ -19,80 +19,90 @@ import com.STL.Utils.ConfigReader;
 import com.STL.Utils.ScreenShotUtil;
 import com.aventstack.extentreports.ExtentTest;
 
-public class BaseTest extends SuiteSetup {
+public class BaseTest {
 
-    protected WebDriver driver;
-    protected ExtentTest test;
+	protected WebDriver driver;
+	protected ExtentTest test;
 
-    @BeforeMethod
-    public void setup(Method method) {
-        driver = browserInitializationAndOpenApplication(ConfigReader.getProperty("browser"));
-        test = SuiteSetup.extent.createTest(method.getName());
-        new LoginFeature(driver).loginToApplication();
-    }
+	@BeforeMethod
+	public void setup(Method method) {
+		driver = browserInitializationAndOpenApplication(ConfigReader.getProperty("browser"));
+		test = SuiteSetup.extent.createTest(method.getName());
+		new LoginFeature(driver).loginToApplication();
+	}
 
-    public WebDriver browserInitializationAndOpenApplication(String browserName) {
-        boolean isHeadless = ConfigReader.isHeadless(); // ✅ Use helper method from ConfigReader
+	public WebDriver browserInitializationAndOpenApplication(String browserName)
+	{
+		boolean isHeadless = ConfigReader.isHeadless();
 
-        if (browserName.equalsIgnoreCase("chrome")) {
-            ChromeOptions options = new ChromeOptions();
-            if (isHeadless) { // ✅ Add headless condition
-                options.addArguments("--headless=new");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--window-size=1920,1080");
-            }
-            driver = new ChromeDriver(options); // ✅ Pass configured options
+		if (browserName.equalsIgnoreCase("chrome")) 
+		{
+			ChromeOptions options = new ChromeOptions();
+			if (isHeadless) 
+			{
+				options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
+			}
+			driver = new ChromeDriver(options);
 
-        } else if (browserName.equalsIgnoreCase("edge")) {
-            EdgeOptions options = new EdgeOptions();
-            if (isHeadless) { // ✅ Headless support for Edge
-                options.addArguments("--headless=new");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--window-size=1920,1080");
-            }
-            driver = new EdgeDriver(options);
+		}
+		else if (browserName.equalsIgnoreCase("edge")) 
+		{
+			EdgeOptions options = new EdgeOptions();
+			if (isHeadless) 
+			{
+				options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
+			}
+			driver = new EdgeDriver(options);
 
-        } else if (browserName.equalsIgnoreCase("firefox")) {
-            FirefoxOptions options = new FirefoxOptions();
-            if (isHeadless) { // ✅ Headless support for Firefox
-                options.addArguments("--headless");
-                options.addArguments("--width=1920");
-                options.addArguments("--height=1080");
-            }
-            driver = new FirefoxDriver(options);
-        }
+		}
+		else if (browserName.equalsIgnoreCase("firefox")) 
+		{
+			FirefoxOptions options = new FirefoxOptions();
+			if (isHeadless)
+			{
+				options.addArguments("--headless");
+				options.addArguments("--width=1920", "--height=1080");
+			}
+			driver = new FirefoxDriver(options);
+		}
 
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
-        driver.get(ConfigReader.getProperty("url")); // ✅ Still uses config.properties
-        return driver;
-    }
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
+		driver.get(ConfigReader.getProperty("url"));
+		return driver;
+	}
 
-    @AfterMethod
-    public void teardown(ITestResult result) {
-        if (test != null) {
-            if (result.getStatus() == ITestResult.FAILURE) {
-                String screenshotPath = ScreenShotUtil.captureScreenshot(driver, result.getName());
-                test.fail(result.getThrowable());
-                test.addScreenCaptureFromPath(screenshotPath);
-            } else if (result.getStatus() == ITestResult.SUCCESS) {
-                test.pass("Test Passed");
-            } else {
-                test.skip("Test Skipped");
-            }
-        }
+	@AfterMethod
+	public void teardown(ITestResult result)
+	{
+		if (test != null) 
+		{
+			if (result.getStatus() == ITestResult.FAILURE) 
+			{
+				String screenshotPath = ScreenShotUtil.captureScreenshot(driver, result.getName());
+				test.fail(result.getThrowable());
+				try
+				{
+					test.addScreenCaptureFromPath(screenshotPath);
+				} catch (Exception e) 
+				{
+					e.printStackTrace();
+				}
+			}
+			else if (result.getStatus() == ITestResult.SUCCESS) 
+			{
+				test.pass("Test Passed");
+			}
+			else 
+			{
+				test.skip("Test Skipped");
+			}
+		}
 
-        try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        SuiteSetup.extent.flush();
-
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+		if (driver != null)
+		{
+			driver.quit();
+		}
+	}
 }

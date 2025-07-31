@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Smoke Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Smoke Test(failed)">
+    <classes>
+      <class name="com.STL_TestCases.LoginTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="verifyLogin"/>
+        </methods>
+      </class> <!-- com.STL_TestCases.LoginTest -->
+      <class name="com.STL.Base.SuiteSetup">
+        <methods>
+          <include name="initializeExtent"/>
+        </methods>
+      </class> <!-- com.STL.Base.SuiteSetup -->
+    </classes>
+  </test> <!-- Smoke Test(failed) -->
+</suite> <!-- Failed suite [Smoke Suite] -->

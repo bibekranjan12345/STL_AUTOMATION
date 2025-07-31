@@ -1,7 +1,6 @@
 package com.STL_TestCases;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.Test;
 
 import com.STL.Base.BaseTest;
 import com.STL.Feature.CreateCRCCFeature;
