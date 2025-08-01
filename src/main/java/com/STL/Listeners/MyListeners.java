@@ -16,7 +16,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 public class MyListeners implements ITestListener {
-
+	
+	private String reportFilePath;
     private static ExtentReports extentReport;
     private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
@@ -34,6 +35,10 @@ public class MyListeners implements ITestListener {
     public void onStart(ITestContext context) {
         String suiteName = context.getSuite().getName(); // Dynamically fetch suite name
         extentReport = ExtentReporter.generateExtentReport(suiteName);
+        
+        String sanitizedSuiteName = suiteName.replaceAll("\\s+", "");
+        String timestamp = new java.text.SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new java.util.Date());
+        reportFilePath = System.getProperty("user.dir") + "/test-output/ExtentReports/ExtentReport_" + sanitizedSuiteName + "_" + timestamp + ".html";
     }
 
     @Override
@@ -86,8 +91,10 @@ public class MyListeners implements ITestListener {
     public void onFinish(ITestContext context) {
         extentReport.flush();
         try {
-            File reportFile = new File(System.getProperty("user.dir") + "/test-output/ExtentReports/ExtentReport.html");
-            Desktop.getDesktop().browse(reportFile.toURI());
+            File reportFile = new File(reportFilePath);
+            if (reportFile.exists()) {
+                Desktop.getDesktop().browse(reportFile.toURI());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

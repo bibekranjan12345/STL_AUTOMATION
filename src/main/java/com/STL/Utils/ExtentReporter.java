@@ -12,8 +12,13 @@ public class ExtentReporter {
     public static ExtentReports generateExtentReport(String suiteName) {
         ExtentReports extentReport = new ExtentReports();
 
-        // Save to output folder
-        String reportPath = System.getProperty("user.dir") + "/test-output/ExtentReports/ExtentReport.html";
+        String sanitizedSuiteName = suiteName.replaceAll("\\s+", ""); // e.g., "SmokeSuite"
+        String timestamp = new java.text.SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new java.util.Date());
+        String reportDir = System.getProperty("user.dir") + "/test-output/ExtentReports";
+        new java.io.File(reportDir).mkdirs();
+        
+        String reportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + "_" + timestamp + ".html";
+        
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
 
         sparkReporter.config().setTheme(Theme.STANDARD);
