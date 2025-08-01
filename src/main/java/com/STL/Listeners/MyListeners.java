@@ -36,9 +36,8 @@ public class MyListeners implements ITestListener {
         String suiteName = context.getSuite().getName(); // Dynamically fetch suite name
         extentReport = ExtentReporter.generateExtentReport(suiteName);
         
-        String sanitizedSuiteName = suiteName.replaceAll("\\s+", "");
-        String timestamp = new java.text.SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new java.util.Date());
-        reportFilePath = System.getProperty("user.dir") + "/test-output/ExtentReports/ExtentReport_" + sanitizedSuiteName + "_" + timestamp + ".html";
+        // Use the actual generated path instead of creating your own
+        reportFilePath = ExtentReporter.generatedReportPath;
     }
 
     @Override

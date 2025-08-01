@@ -8,6 +8,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentReporter {
+    public static String generatedReportPath;  // ADD THIS
 
     public static ExtentReports generateExtentReport(String suiteName) {
         ExtentReports extentReport = new ExtentReports();
@@ -16,11 +17,12 @@ public class ExtentReporter {
         String timestamp = new java.text.SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new java.util.Date());
         String reportDir = System.getProperty("user.dir") + "/test-output/ExtentReports";
         new java.io.File(reportDir).mkdirs();
-        
-        String reportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + "_" + timestamp + ".html";
-        
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
 
+        String reportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + "_" + timestamp + ".html";
+
+        generatedReportPath = reportPath; // SET THE PATH HERE
+
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
         sparkReporter.config().setTheme(Theme.STANDARD);
         sparkReporter.config().setReportName("STL Automation Execution Report : " + suiteName);
         sparkReporter.config().setDocumentTitle("STL QA Execution Results");
@@ -31,13 +33,11 @@ public class ExtentReporter {
         try {
             Properties prop = new Properties();
             InputStream input = ExtentReporter.class.getClassLoader().getResourceAsStream("config.properties");
-
             if (input != null) {
                 prop.load(input);
                 extentReport.setSystemInfo("Application URL", prop.getProperty("url"));
                 extentReport.setSystemInfo("Browser", prop.getProperty("browser"));
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
