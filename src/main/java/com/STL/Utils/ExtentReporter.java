@@ -19,9 +19,9 @@ public class ExtentReporter {
         new java.io.File(reportDir).mkdirs();
 
         // 1. Timestamped file for historical tracking
-        String timestampedReportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + "_" + timestamp + ".html";
+        String timestampedReportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + "_"+ timestamp  + ".html";
         generatedReportPath = timestampedReportPath; // You can still use this for email/report sharing
-
+        
         // 2. Static report for Jenkins HTML Publisher plugin
         String staticReportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + ".html";
 
