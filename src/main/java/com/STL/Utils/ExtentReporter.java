@@ -21,14 +21,14 @@ public class ExtentReporter {
         String timestampedReportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + "_" + timestamp + ".html";
 
         // Static report path (for Jenkins)
-        String staticReportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + ".html";
+        //String staticReportPath = reportDir + "/ExtentReport_" + sanitizedSuiteName + ".html";
 
         // Create the reporters
         ExtentSparkReporter sparkTimestamped = new ExtentSparkReporter(timestampedReportPath);
-        ExtentSparkReporter sparkStatic = new ExtentSparkReporter(staticReportPath);
+        //ExtentSparkReporter sparkStatic = new ExtentSparkReporter(staticReportPath);
 
         // Common config
-        for (ExtentSparkReporter reporter : new ExtentSparkReporter[]{sparkTimestamped, sparkStatic}) {
+        for (ExtentSparkReporter reporter : new ExtentSparkReporter[]{sparkTimestamped}) {
             reporter.config().setTheme(Theme.STANDARD);
             reporter.config().setReportName("STL Automation Execution Report : " + suiteName);
             reporter.config().setDocumentTitle("STL QA Execution Results");
@@ -36,12 +36,13 @@ public class ExtentReporter {
         }
 
         // Attach both reporters
-        extentReport.attachReporter(sparkTimestamped, sparkStatic);
+       // extentReport.attachReporter(sparkTimestamped, sparkStatic);
+        extentReport.attachReporter(sparkTimestamped);
 
         // Optional debug log
-        System.out.println("✅ Extent Reports initialized at:");
+        System.out.println(" Extent Reports initialized at:");
         System.out.println("  - " + timestampedReportPath);
-        System.out.println("  - " + staticReportPath);
+        //System.out.println("  - " + staticReportPath);
 
         // Add system info
         try {
