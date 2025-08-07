@@ -16,11 +16,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 public class MyListeners implements ITestListener {
-	
-	private String reportFilePath;
+
     private static ExtentReports extentReport;
     private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
-
     private String testName;
 
     public static ExtentTest getExtentTest() {
@@ -33,11 +31,8 @@ public class MyListeners implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        String suiteName = context.getSuite().getName(); // Dynamically fetch suite name
+        String suiteName = context.getSuite().getName(); // Dynamic suite name
         extentReport = ExtentReporter.generateExtentReport(suiteName);
-        
-        // Use the actual generated path instead of creating your own
-        reportFilePath = ExtentReporter.generatedReportPath;
     }
 
     @Override
@@ -96,6 +91,8 @@ public class MyListeners implements ITestListener {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            extentReport.flush();
+            // No need to manually copy the file again here
         }
     }
 }

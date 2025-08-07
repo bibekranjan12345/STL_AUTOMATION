@@ -13,6 +13,13 @@
           <include name="navigateToCRCCListPage"/>
         </methods>
       </class> <!-- com.STL_TestCases.NavigateToCRCCListTest -->
+      <class name="com.STL_TestCases.CreateCRCCTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="createCrcc"/>
+        </methods>
+      </class> <!-- com.STL_TestCases.CreateCRCCTest -->
     </classes>
   </test> <!-- Regression Test(failed) -->
 </suite> <!-- Failed suite [Regression Suite] -->
