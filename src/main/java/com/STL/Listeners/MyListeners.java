@@ -1,8 +1,9 @@
 package com.STL.Listeners;
 
-import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -83,16 +84,24 @@ public class MyListeners implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        extentReport.flush();
-        try {
-            File reportFile = new File(reportFilePath);
-            if (reportFile.exists()) {
-                Desktop.getDesktop().browse(reportFile.toURI());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (extentReport != null) {
             extentReport.flush();
-            // No need to manually copy the file again here
+
+            // Get the path of the dynamic report (with timestamp)
+            File reportFile = new File(ExtentReporter.generatedReportPath);  //  This is the timestamped report path
+
+            // Define static report name based on suite name (RegressionSuite or SmokeSuite)
+            String suiteName = context.getSuite().getName().replaceAll(" ", "") + "Suite";
+            File staticReportFile = new File("test-output/ExtentReports/ExtentReport_" + suiteName + ".html");
+
+            try {
+                // Copy the dynamic report to the static one for Jenkins
+                Files.copy(reportFile.toPath(), staticReportFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
+
 }
