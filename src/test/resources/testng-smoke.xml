@@ -3,6 +3,7 @@
 <suite name="Smoke Suite" verbose="1">
   <listeners>
     <listener class-name="com.STL.Base.SuiteSetup"/>
+    <listener class-name="com.STL.Listeners.MyListeners"/>
   </listeners>
 
   <test name="Smoke Test">

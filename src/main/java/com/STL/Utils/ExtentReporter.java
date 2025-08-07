@@ -38,6 +38,7 @@ public class ExtentReporter {
         // Attach both reporters
        // extentReport.attachReporter(sparkTimestamped, sparkStatic);
         extentReport.attachReporter(sparkTimestamped);
+        generatedReportPath = timestampedReportPath;
 
         // Optional debug log
         System.out.println(" Extent Reports initialized at:");

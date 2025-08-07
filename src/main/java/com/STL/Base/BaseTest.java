@@ -16,7 +16,6 @@ import org.testng.annotations.BeforeMethod;
 
 import com.STL.Feature.LoginFeature;
 import com.STL.Utils.ConfigReader;
-import com.STL.Utils.ScreenShotUtil;
 import com.aventstack.extentreports.ExtentTest;
 
 public class BaseTest {
@@ -27,7 +26,6 @@ public class BaseTest {
 	@BeforeMethod
 	public void setup(Method method) {
 		driver = browserInitializationAndOpenApplication(ConfigReader.getProperty("browser"));
-		test = SuiteSetup.extent.createTest(method.getName());
 		new LoginFeature(driver).loginToApplication();
 	}
 
@@ -74,35 +72,9 @@ public class BaseTest {
 	}
 
 	@AfterMethod
-	public void teardown(ITestResult result)
-	{
-		if (test != null) 
-		{
-			if (result.getStatus() == ITestResult.FAILURE) 
-			{
-				String screenshotPath = ScreenShotUtil.captureScreenshot(driver, result.getName());
-				test.fail(result.getThrowable());
-				try
-				{
-					test.addScreenCaptureFromPath(screenshotPath);
-				} catch (Exception e) 
-				{
-					e.printStackTrace();
-				}
-			}
-			else if (result.getStatus() == ITestResult.SUCCESS) 
-			{
-				test.pass("Test Passed");
-			}
-			else 
-			{
-				test.skip("Test Skipped");
-			}
-		}
-
-		if (driver != null)
-		{
-			driver.quit();
-		}
+	public void teardown(ITestResult result) {
+	    if (driver != null) {
+	        driver.quit();
+	    }
 	}
 }
