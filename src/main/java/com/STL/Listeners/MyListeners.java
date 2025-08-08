@@ -59,10 +59,14 @@ public class MyListeners implements ITestListener {
             Object testInstance = result.getInstance();
             Class<?> clazz = testInstance.getClass();
 
-            Field driverField = findField(clazz, "driver");
-            driverField.setAccessible(true);
-
-            WebDriver driver = (WebDriver) driverField.get(testInstance);
+            WebDriver driver = null;
+            try {
+                Field driverField = findField(clazz, "driver"); // your helper
+                driverField.setAccessible(true);
+                driver = (WebDriver) driverField.get(testInstance);
+            } catch (NoSuchFieldException nf) {
+                System.out.println("No 'driver' field found in test class or parent classes. Skipping screenshot.");
+            }
 
             if (driver != null) {
                 String screenshotPath = ScreenShotUtil.captureScreenshot(driver, testName);
@@ -71,23 +75,9 @@ public class MyListeners implements ITestListener {
                 System.out.println("Driver is null. Screenshot not taken.");
             }
 
-        } catch (NoSuchFieldException e) {
-            System.out.println("No 'driver' field found in class or superclass. Skipping screenshot.");
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    // helper method
-    private Field findField(Class<?> clazz, String fieldName) throws NoSuchFieldException {
-        while (clazz != null) {
-            try {
-                return clazz.getDeclaredField(fieldName);
-            } catch (NoSuchFieldException e) {
-                clazz = clazz.getSuperclass();
-            }
-        }
-        throw new NoSuchFieldException("Field '" + fieldName + "' not found in class hierarchy.");
     }
 
 
@@ -105,23 +95,34 @@ public class MyListeners implements ITestListener {
         if (extentReport != null) {
             extentReport.flush();
 
-            // Get the path of the dynamic report (with timestamp)
-            File reportFile = new File(ExtentReporter.generatedReportPath);  //  This is the timestamped report path
+            if (ExtentReporter.generatedReportPath != null) {
+                File reportFile = new File(ExtentReporter.generatedReportPath);
 
-            // Define static report name based on suite name (RegressionSuite or SmokeSuite)
-            String suiteName = context.getSuite().getName().replaceAll(" ", "") + "Suite";
-            File staticReportFile = new File("test-output/ExtentReports/ExtentReport_" + suiteName + ".html");
+                String suiteName = context.getSuite().getName().replaceAll(" ", "") + "Suite";
+                File staticReportFile = new File("test-output/ExtentReports/ExtentReport_" + suiteName + ".html");
 
-            try {
-                // Copy the dynamic report to the static one for Jenkins
-                Files.copy(reportFile.toPath(), staticReportFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            } catch (IOException e) {
-            	e.printStackTrace();
+                try {
+                    Files.copy(reportFile.toPath(), staticReportFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    System.out.println("Copied report to: " + staticReportFile.getAbsolutePath());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("ExtentReporter.generatedReportPath is null. Report copy skipped.");
             }
-
         }
-        System.out.println("Extent report generated at: " + ExtentReporter.generatedReportPath);
+    }
 
+ // Helper method to search for a field in the class hierarchy
+    private Field findField(Class<?> clazz, String fieldName) throws NoSuchFieldException {
+        while (clazz != null) {
+            try {
+                return clazz.getDeclaredField(fieldName);
+            } catch (NoSuchFieldException e) {
+                clazz = clazz.getSuperclass(); // Move up the inheritance chain
+            }
+        }
+        throw new NoSuchFieldException("Field '" + fieldName + "' not found in class hierarchy.");
     }
 
 }
