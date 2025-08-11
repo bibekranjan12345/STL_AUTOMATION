@@ -1,26 +1,44 @@
 package com.STL.Base;
 
+import java.io.File;
+
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 
 import com.STL.Utils.ExtentReporter;
-import com.aventstack.extentreports.ExtentReports;
 
 public class SuiteSetup implements ISuiteListener {
-    public static ExtentReports extent;
 
     @Override
     public void onStart(ISuite suite) {
-        String suiteName = suite.getName();  // e.g. "Smoke Suite"
-        System.out.println("=== Initializing ExtentReports for: " + suiteName + " ===");
-        extent = ExtentReporter.generateExtentReport(suiteName);
+        // 1. Delete old reports
+        String reportDirPath = System.getProperty("user.dir") + "/test-output/ExtentReports";
+        File reportDir = new File(reportDirPath);
+        if (reportDir.exists()) {
+            deleteDirectory(reportDir);
+        }
+        reportDir.mkdirs();
+
+        // 2. Initialize ExtentReports with suite name
+        ExtentReporter.initReports(suite.getName());
     }
 
     @Override
     public void onFinish(ISuite suite) {
-        if (extent != null) {
-            extent.flush();
-            System.out.println("=== Extent Report Flushed Successfully ===");
+        ExtentReporter.flushReports();
+    }
+
+    private void deleteDirectory(File dir) {
+        File[] files = dir.listFiles();
+        if (files != null) {
+            for (File f : files) {
+                if (f.isDirectory()) {
+                    deleteDirectory(f);
+                } else {
+                    f.delete();
+                }
+            }
         }
+        dir.delete();
     }
 }
